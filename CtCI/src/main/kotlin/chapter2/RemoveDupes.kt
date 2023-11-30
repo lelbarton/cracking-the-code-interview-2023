@@ -1,7 +1,5 @@
 package chapter2
 
-import com.sun.org.apache.xerces.internal.dom.ChildNode
-
 /*
 Write code to remove duplicates from an unsorted linked list
  */
