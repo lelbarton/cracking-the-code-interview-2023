@@ -14,7 +14,7 @@ class IsUnique {
         if (str.isEmpty()) return true
 
         // Mutable set solution included here for completeness,
-        // but the following conversion to a set is clearer and requires less code
+        // as the more 'classic' solution.
 //        val charSet = mutableSetOf<Char>()
 //        str.forEach{
 //            if (charSet.contains(it)) return false
