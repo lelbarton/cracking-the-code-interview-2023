@@ -11,28 +11,29 @@ class RemoveDupes {
         if (node.next == null) {
             return node
         }
-        val seen = mutableSetOf<String>()
 
-        var curr: Node = node
-        var next: Node? = node.next
+        var curr = node
+        var next = node.next
 
+        val seen = mutableSetOf<Int>()
         seen.add(curr.value)
 
-        while (next != null) {
+        while(next != null) {
             if (seen.contains(next.value)) {
-                next = next.next!!
+                next = next.next
             } else {
                 seen.add(next.value)
                 curr.next = next
                 curr = next
-                next = next.next!!
             }
         }
+        curr.next = null
 
         return node
     }
 }
 
-class Node(val value: String) {
+// TODO iterator for more fluent testing
+class Node(val value: Int) {
     var next: Node? = null
 }
