@@ -1,4 +1,4 @@
-package chapter2
+package ch2linkedLists
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test

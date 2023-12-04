@@ -1,4 +1,4 @@
-package chapter1
+package ch1strings
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
