@@ -7,8 +7,8 @@ class IsUniqueTest {
 
     private val isUnique = IsUnique()
 
-    private val uniqueCharStrings = listOf("x", "abcd", "abc£d&e","!@£$")
-    private val repeatedCharStrings = listOf("abcda", "abc%d%e", "%^&*&", "xx", "abcdxx")
+    private val uniqueCharStrings = listOf("x", "abcd", "abc£d&e","!@£$", " \t\n")
+    private val repeatedCharStrings = listOf("abcda", "abc%d%e", "%^&*&", "xx", "abcdxx", "\t\t\t", "\t \n ")
 
     @Test
     fun `when string is empty, is unique v1 returns true`() {
