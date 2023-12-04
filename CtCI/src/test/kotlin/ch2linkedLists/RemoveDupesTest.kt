@@ -9,7 +9,7 @@ class RemoveDupesTest {
 
     @Test
     fun `when the node has no child, return node`() {
-        assertEquals(1, removeDupes.removeDuplicateNodes(Node(1)).value)
+        assertEquals(1, removeDupes.removeDuplicateNodes(LinkedListNode(1)).value)
     }
 
     @Test
@@ -48,14 +48,14 @@ class RemoveDupesTest {
         assertEquals(5, head.count())
     }
 
-    private fun buildLinkedList(values: List<Int>): Node<Int> {
-        val head = Node(values.first())
+    private fun buildLinkedList(values: List<Int>): LinkedListNode<Int> {
+        val head = LinkedListNode(values.first())
         val rest = values.drop(1)
 
         rest.fold(head) { prevNode, curr ->
-            val newNode = Node(curr)
-            prevNode.next = newNode
-            newNode
+            val newLinkedListNode = LinkedListNode(curr)
+            prevNode.next = newLinkedListNode
+            newLinkedListNode
         }
 
         return head

@@ -5,13 +5,13 @@ Write code to remove duplicates from an unsorted linked list
  */
 class RemoveDupes {
 
-    fun <T> removeDuplicateNodes(node: Node<T>): Node<T> {
-        if (node.next == null) {
-            return node
+    fun <T> removeDuplicateNodes(linkedListNode: LinkedListNode<T>): LinkedListNode<T> {
+        if (linkedListNode.next == null) {
+            return linkedListNode
         }
 
-        var curr = node
-        var next = node.next
+        var curr = linkedListNode
+        var next = linkedListNode.next
 
         val seen = mutableSetOf<T>()
         seen.add(curr.value)
@@ -27,6 +27,6 @@ class RemoveDupes {
         }
         curr.next = null
 
-        return node
+        return linkedListNode
     }
 }
