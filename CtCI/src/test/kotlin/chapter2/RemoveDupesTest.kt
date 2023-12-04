@@ -14,42 +14,41 @@ class RemoveDupesTest {
 
     @Test
     fun `when list contains no dupes, return list`() {
-        val linkedList = buildLinkedList(listOf(1, 2, 3))
+        val linkedList = buildLinkedList(listOf(0, 1, 2))
 
         val head = removeDupes.removeDuplicateNodes(linkedList)
 
-        assertEquals(1, head.value)
-        assertEquals(2, head.next?.value)
-        assertEquals(3, head.next?.next?.value)
-        assertNull(head.next?.next?.next)
+        head.iterator().withIndex().forEach {
+            assertEquals(it.index, it.value)
+        }
+        assertEquals(3, head.count())
     }
 
     @Test
     fun `when list contains duplicates, return list with only unique elements`() {
-        val linkedList = buildLinkedList(listOf(1, 2, 2, 2, 3))
+        val linkedList = buildLinkedList(listOf(0, 1, 2, 2, 2, 3))
 
         val head = removeDupes.removeDuplicateNodes(linkedList)
 
-        assertEquals(1, head.value)
-        assertEquals(2, head.next?.value)
-        assertEquals(3, head.next?.next?.value)
-        assertNull(head.next?.next?.next)
+        head.iterator().withIndex().forEach {
+            assertEquals(it.index, it.value)
+        }
+        assertEquals(4, head.count())
     }
 
     @Test
     fun `when list contains many duplicates, return list with only unique elements`() {
-        val linkedList = buildLinkedList(listOf(1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4))
+        val linkedList = buildLinkedList(listOf(0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4))
 
         val head = removeDupes.removeDuplicateNodes(linkedList)
 
-        assertEquals(1, head.value)
-        assertEquals(2, head.next?.value)
-        assertEquals(3, head.next?.next?.value)
-        assertEquals(4, head.next?.next?.next?.value)
-        assertNull(head.next?.next?.next?.next)
+        head.iterator().withIndex().forEach {
+            assertEquals(it.index, it.value)
+        }
+        assertEquals(5, head.count())
     }
 
-    private fun buildLinkedList(values: List<Int>): Node {
+    private fun buildLinkedList(values: List<Int>): Node<Int> {
         val head = Node(values.first())
         val rest = values.drop(1)
 

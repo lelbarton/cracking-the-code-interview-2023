@@ -5,7 +5,7 @@ Write code to remove duplicates from an unsorted linked list
  */
 class RemoveDupes {
 
-    fun removeDuplicateNodes(node: Node): Node {
+    fun <T> removeDuplicateNodes(node: Node<T>): Node<T> {
         if (node.next == null) {
             return node
         }
@@ -13,7 +13,7 @@ class RemoveDupes {
         var curr = node
         var next = node.next
 
-        val seen = mutableSetOf<Int>()
+        val seen = mutableSetOf<T>()
         seen.add(curr.value)
 
         while(next != null) {
@@ -31,7 +31,19 @@ class RemoveDupes {
     }
 }
 
-// TODO iterator for more fluent testing
-class Node(val value: Int) {
-    var next: Node? = null
+class Node<T>(val value: T) : Iterable<T> {
+    var next: Node<T>? = null
+    override fun iterator(): Iterator<T> = NodeIterator(this)
+}
+
+class NodeIterator<T>(head: Node<T>) : Iterator<T> {
+    private var curr : Node<T>? = head
+    override fun hasNext(): Boolean = curr != null
+
+    override fun next(): T {
+        val thisValue = curr?.value
+        curr = curr?.next
+        return thisValue!!
+    }
+
 }
