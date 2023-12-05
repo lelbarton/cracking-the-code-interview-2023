@@ -3,12 +3,13 @@ package ch4treesAndGraphs
 import java.util.ArrayDeque
 
 /*
-Given a directed graph and two nodes (S and E), design an algorithm to find out whether there is a route from S to E
+4.1 Given a directed graph and two nodes (S and E), design an algorithm to find out whether there is a route from S to E
  */
 class RouteBetweenNodes {
     // Breadth-first tends to be more efficient for finding paths between two nodes,
     // both in terms of finding the relationship but also the shortest path, so we will use that over depth-first.
 
+    // BFS runs on O(V + E) where V is nodes and E is edges
     fun  pathExists(start: GraphNode, end: GraphNode) : Boolean {
         if (start == end) {
             return true

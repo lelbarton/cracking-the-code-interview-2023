@@ -1,11 +1,6 @@
 package ch1strings
 /*
- Question: Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
-
- Special cases
- Empty string => True
-
- Assuming no whitespace characters
+ 1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
  */
 class IsUnique {
 
@@ -36,9 +31,5 @@ class IsUnique {
             }
         }
         return true
-    }
-
-    fun isUniqueBookSolution(str: String): Boolean {
-        TODO()
     }
 }

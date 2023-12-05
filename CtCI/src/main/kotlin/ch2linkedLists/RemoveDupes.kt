@@ -1,10 +1,11 @@
 package ch2linkedLists
 
 /*
-Write code to remove duplicates from an unsorted linked list
+2.1 Write code to remove duplicates from an unsorted linked list
  */
 class RemoveDupes {
 
+    // We traverse the list once, skipping any values previously seen. This therefore runs in O(n)
     fun <T> removeDuplicateNodes(linkedListNode: LinkedListNode<T>): LinkedListNode<T> {
         if (linkedListNode.next == null) {
             return linkedListNode
