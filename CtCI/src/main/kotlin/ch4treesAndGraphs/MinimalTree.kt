@@ -22,7 +22,7 @@ class MinimalTree(private val elements: List<Int>) {
             return null
         }
 
-        val midpoint: Int = leftBound + ((rightBound - leftBound) / 2)
+        val midpoint: Int = (rightBound + leftBound) / 2
 
         return TreeNode(
             elements[midpoint],
