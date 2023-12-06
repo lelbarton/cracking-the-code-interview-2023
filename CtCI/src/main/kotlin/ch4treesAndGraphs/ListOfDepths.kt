@@ -12,6 +12,7 @@ class ListOfDepths<T>(root: TreeNode<T>?) {
         getListOfDepthsRecursive(root, 0)
     }
 
+    // We visit every node, so complexity is O(n)
     private fun getListOfDepthsRecursive(
         node: TreeNode<T>?,
         level: Int,
