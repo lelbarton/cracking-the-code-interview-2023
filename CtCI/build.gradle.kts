@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.projectlombok:lombok:1.18.28")
     testImplementation(kotlin("test"))
 }
 
